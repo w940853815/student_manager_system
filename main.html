@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+	</head>
+
+	<body ng-app="scotchApp" ng-controller="mainController">
+		<!--S 顶部导航条-->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid ">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				    </button>
+					<a class="navbar-brand" href="#">xx大学</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">消息 <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<a href="">
+									<span class="glyphicon glyphicon-refresh pull-right"></span>
+								</a>
+								<li>
+									<a href="#">
+										<span class="glyphicon glyphicon-bell"></span> 某某某
+									</a>
+									<span class="pull-right">55分钟前</span>
+								</li>
+								<li>
+									<a href="#">
+										<span class="glyphicon glyphicon-bell"></span> 某某某
+									</a>
+									<span class="pull-right">2小时前</span>
+								</li>
+								<li>
+									<a href="#">
+										<span class="glyphicon glyphicon-bell"></span> 某某某
+									</a>
+									<span class="pull-right">3小时前</span>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">设置</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="userName">我是管理员 <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="#">个人设置</a>
+								</li>
+								<li>
+									<a href="#">管理</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#" id="logout_btn">退出</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+		<!--E 顶部导航条-->
+		
+		<!--S 身体-->
+		<div class="container-fluid main-body">
+			<div class="row">
+				<!--左侧导航-->
+				<div class="col-sm-2 left-bar">
+
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+						<!--面板-->
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingOne">
+								<h4 class="panel-title">
+							        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										<span class="glyphicon glyphicon-home"></span>个人中心
+							        </a>
+							    </h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<ul class="list-group">
+										<li class="list-group-item">
+											<a href="#myInfo" target="">
+												<span class="glyphicon glyphicon-user"></span>我的信息
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="#myClass" target="">
+												<span class="glyphicon glyphicon-book"></span>我的班级
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="#myMessage" target="">
+												<span class="glyphicon glyphicon-bullhorn"></span>通知
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="#!" target="">
+												<span class="glyphicon glyphicon-th"></span>课程表
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!--消息-->
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingTwo">
+								<h4 class="panel-title">
+							        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										<span class="glyphicon glyphicon-envelope"></span>
+										消息
+										<span class="badge pull-right">14</span> 
+							        </a>
+							    </h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel">
+								<div class="panel-body">
+									<ul class="list-group">
+										<li class="list-group-item">
+											<a href="#!">
+												<span class="glyphicon glyphicon-folder-open"></span>
+												收件箱
+												<span class="badge pull-right">14</span>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="#!">
+												<span class="glyphicon glyphicon-eye-open"></span> 查看邮件
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="#!">
+												<span class="glyphicon glyphicon-pencil"></span> 写信
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!--设置-->
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingThree">
+								<h4 class="panel-title">
+							        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										<span class="glyphicon glyphicon-tasks"></span>
+										 设置中心
+							        </a>
+							    </h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel">
+								<div class="panel-body">
+									<ul class="list-group">
+										<li class="list-group-item">
+											<a href="#!">
+												<span class="glyphicon glyphicon-th"></span>密码修改
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--内容部分-->
+				<div class="col-sm-10 ">
+					
+					<!--面包屑导航-->
+					<ol class="breadcrumb">
+						<li>
+							<a href="#!" class="active">个人中心</a>
+						</li>
+					</ol>
+					
+					<!--视图部分-->
+					<div ng-view></div>
+					
+				</div>
+			</div>
+		</div>
+		<!--E 身体-->
+		
+		<!--js-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/angularjs.min.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="js/echarts.common.min.js"></script>
+		<script src="js/script.js"></script>
+		<script type="text/javascript">
+			javascript:window.history.forward(1); 
+		</script>
+	</body>
+
+</html>
