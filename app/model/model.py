@@ -2,7 +2,9 @@
 from  sql_con import db
 from flask_sqlalchemy import SQLAlchemy
 class stu_info(db.Model):
-	'''对数据库'''
+'''Flask-SQLAlchemy这个框架SQLAlchemy 的操作，而SQLAlchemy 是一个很强大的关系型数据库框架
+
+'''
 	__tablename__='stu_info'
 	stu_id = db.Column(db.Integer, primary_key=True)
 	stu_name=db.Column(db.VARCHAR(8),nullable=False)
@@ -80,7 +82,6 @@ class stu_info(db.Model):
 # stu.delete_table()
 # stu.creat_table()
 s=stu_info.query.filter_by(stu_id='1').first()
-
 s1=stu_info.query.all()
 print s.stu_id,s.stu_name,s.stu_cardID,s.stu_sex,s.stu_birthday,s.stu_nation,s.stu_zzmm,s.stu_qq,s.stu_email,s.stu_yzbm,s.stu_ksh,s.stu_rxsj,s.stu_rxfs,s.stu_xxxs,s.stu_pylx,s.stu_pydx,s.stu_pycc,s.stu_bxlx,s.stu_bxxx,s.stu_img,s.stu_tel,s.stu_dept,s.stu_profession,s.stu_class,s.stu_start_date,s.stu_native,s.stu_record
 
