@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="classWrapper">
+			<table class="table table-bordered table-striped classTable">
+				<tr>
+					<th>班级名称</th>
+					<td colspan="5">{{student.class_name}}</td>
+				</tr>
+				<tr>
+					<th>班级QQ群</th>
+					<td colspan="5">{{student.class_qq}}<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e713e2fd2cfccd659b799a72d8bf54d41618b5b99431e8b114cab70d40cf8225"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="あ荭亼馆_" title="あ荭亼馆_"></a></td>
+				</tr>
+				<tr>
+					<th>班级宣传语</th>
+					<td colspan="5">{{student.class_word}}</td>
+				</tr>
+				<tr>
+					<th>学校名称</th>
+					<td colspan="5">{{student.school_name}}</td>
+				</tr>
+				<tr>
+					<th>班主任老师</th>
+					<td>{{student.leadr_tec}}</td>
+					<th>电话</th>
+					<td>{{student.leadr_tec_tel}}</td>
+					<th>在线交流</th>
+					<td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=573941623&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:573941623:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></td>
+				</tr>
+				<tr>
+					<th>工作评价</th>
+					<td colspan="5">
+						<form action="">
+							<label class="radio-inline">
+							  <input type="radio" name="evaluate_tec" id="great_op" value="option1">我表示很满意
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="evaluate_tec" id="good_op" value="option2"> 我表示很一般
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="evaluate_tec" id="bad_op" value="option3"> 我表示很不满意
+							</label>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<th>问题反馈</th>
+					<td colspan="5">
+						<form action="">
+							<div class="border_b">
+								<label class="radio-inline">
+								  <input type="radio" name="feedback_tec" id="question_op" value="option1">提问
+								</label>
+								<label class="radio-inline">
+								  <input type="radio" name="feedback_tec" id="complain_op" value="option2"> 投诉
+								</label>	
+							</div>
+							<div class="border_b">
+								<textarea class="form-control my-textarea" rows="6" placeholder="请点击这里编辑..."></textarea>
+							</div>
+							<input  class="btn btn-success mybtn" type="submit" id="feedback_btn" name="feedback_btn" value="点击提交"/>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

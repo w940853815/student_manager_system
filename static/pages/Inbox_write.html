@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--写信-->
+		<div class="inboxWrapper">
+			<form  method="post" class="form">
+				<table class="table table-bordered table-striped message_write_table">
+					<tr>
+						<th>信息主题</th>
+						<td>
+							<input class="form-control" type="text" name="messageTit" id="messageTit" placeholder="标题"/>
+						</td>
+					</tr>
+					<tr>
+						<th>信息类型</th>
+						<td>
+							<select class="form-control message-type">
+						  	<option>请选择</option>
+						  	<option>投诉</option>
+							<option>意见</option>
+							<option>提问</option>
+							<option>邮件</option>
+						</select>
+						</td>
+					</tr>
+					<tr>
+						<th>信息内容</th>
+						<td><textarea class="form-control my-textarea" rows="6" placeholder="想说点什么..."></textarea></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input class="btn  btn-success sendBtn" type="submit" value="发送"/></td>
+					</tr>
+				</table>
+			</form>
+			
+		</div>
+	</body>
+</html>

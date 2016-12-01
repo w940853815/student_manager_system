@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="PcWrapper">
+			<table class="table table-bordered table-striped infoTable">
+				<tr>
+					<th>姓名</th>
+					<td>{{student.stu_name}}</td>
+					<th>性别</th>
+					<td>{{student.stu_sex}}</td>
+					<th>身份证</th>
+					<td>{{student.stu_cardID}}</td>
+					<td rowspan="3" class="uer_logo"><img src="{{student.stu_img}}"/></td>
+				</tr>
+				<tr>
+					<th>学号</th>
+					<td>{{student.stu_id}}</td>
+					<th>入学年份</th>
+					<td>{{student.stu_start_date}}</td>
+					<th>学历</th>
+					<td>{{student.stu_record}}</td>
+				</tr>
+				<tr>
+					<th>出生日期</th>
+					<td>{{student.stu_birthday}}</td>
+					<th>民族</th>
+					<td>{{student.stu_nation}}</td>
+					<th>政治面貌</th>
+					<td>{{student.stu_zzmm}}</td>
+				</tr>
+				<tr>
+					<th>联系地址</th>
+					<td>{{student.stu_adress}}</td>
+					<th>QQ</th>
+					<td>{{student.stu_qq}}</td>
+					<th>电子邮箱</th>
+					<td>{{student.stu_email}}</td>
+				</tr>
+				<tr>
+					<th>邮政编码</th>
+					<td>{{student.stu_yzbm}}</td>
+					<th>考生号</th>
+					<td>{{student.stu_ksh}}</td>
+					<th>入学时间</th>
+					<td>{{student.stu_rxsj}}</td>
+				</tr>
+				<tr>
+					<th>入学方式</th>
+					<td>{{student.stu_rxfs}}</td>
+					<th>学习形式</th>
+					<td>{{student.stu_xxxs}}</td>
+					<th>培养类型</th>
+					<td>{{student.stu_pylx}}</td>
+				</tr>
+				<tr>
+					<th>培养对象</th>
+					<td>{{student.stu_pydx}}</td>
+					<th>培养层次</th>
+					<td>{{student.stu_pycc}}</td>
+					<th>办学类型</th>
+					<td>{{student.stu_bxlx}}</td>
+				</tr>
+				<tr>
+					<th>院/系</th>
+					<td>{{student.stu_dept}}</td>
+					<th>专业</th>
+					<td>{{student.stu_profession}}</td>
+					<th>行政班级</th>
+					<td>{{student.stu_class}}</td>
+				</tr>
+				<tr>
+					<th>办学形式</th>
+					<td>{{student.stu_bxxx}}</td>
+					<th>联系方式</th>
+					<td>{{student.stu_tel}}</td>
+					<th>籍贯</th>
+					<td>{{student.stu_native}}</td>
+				</tr>
+			</table>
+		</div>
+		<!--修改联系方式-->
+		<div class="PcWrapper">
+				<label for="newContact" class="redColor leftBorder">如联系方式有变动请及时修改，以便能及时联系到你。谢谢！</label>
+				<div>
+					<p>修改之前的联系方式为：<span>{{stduent.stu_tel}}</span></p>
+				</div>
+			<form  method="post" class="form">
+				<div class="form-group">
+					<label for="newContact">新的联系方式</label>
+					<input class="form-control" type="text" name="newContact" id="newContact" value="" />
+					<input type="submit" class="btn btn-warning" value="确认修改" ng-click="confirmNewtel()"/>
+				</div>
+			</form>
+			<img src="{{yzm}}" alt="" />
+		</div>
+		<!--<script type="text/javascript">
+			function angular_callbacks_0(data){
+				console.log(data)
+			}
+		</script>
+		<script src="http://115.159.208.223/json.json"></script>-->
+	</body>
+</html>

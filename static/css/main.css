@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*整体框架*/
 .navbar{
 	margin-bottom: 0;
 	/*background-color: #51EBD3;*/ 
@@ -12,9 +13,22 @@
 .glyphicon-tasks:before{
 	color: #4caf50;
 }
+.glyphicon-tree-deciduous:before{
+	color: #50d0a2;
+}
+.glyphicon-usd:before{
+	color: #ffc107;
+}
 .main-body{
-	min-height: 600px;
+	min-height: 800px;
 	height: 100%;
+}
+.redColor{
+	color: #e91e63;	
+}
+.leftBorder{
+	padding-left: 6px;
+	border-left: 2px solid #060E1B;
 }
 .left-bar{
 	height: 100%;
@@ -22,6 +36,10 @@
 }
 .row .col-sm-2,.row .col-sm-10{ 
 	padding: 0;
+	min-height: 800px;
+}
+.row .col-sm-10{
+	background-color: #52B86E;
 }
 .row .col-sm-2 .list-group-item{
 	border-radius: 0;
@@ -244,4 +262,120 @@ td .btn{
 	color:#193822;
 	background-color: #fff;
 	text-decoration: none;
+}
+/*我的信息*/
+.PcWrapper form{
+	width: 60%;
+	min-width: 600px;
+}
+.infoTable tr:nth-child(2n){
+	background-color: #b1ecc2;
+}
+.PcWrapper form input{
+	margin-bottom: 10px;
+}
+.PcWrapper form input[type='submit']{
+	float: right;
+}
+/*我的班级*/
+.classWrapper{
+	padding: 30px;	
+}
+.classTable{
+	width: 100%;
+}
+.classTable th{
+	text-align: center;
+	width: 150px;
+}
+.classTable tr:nth-child(2n){
+	background-color: #b1ecc2;
+}
+.border_b{
+	padding: 10px 0;
+	border-bottom: 1px solid #04569A;
+}
+.my-textarea{
+}
+.my-textarea:focus{
+	box-shadow: 0px 0px 15px #09AB8B;
+}
+td .mybtn{
+	padding: 5px 10px;
+	transition: all 0.3s;
+	margin: 10px 0;
+}
+td .mybtn:hover{
+	color: #09AB8B;
+	background-color: #fff;
+}
+/*我的通知*/
+#selectAll_inform{
+	margin-right: 10px;
+}
+.inform-content{
+	max-width: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2; 
+}
+.informTable tr:nth-child(2n){
+	background-color: #b1ecc2;
+}
+.informTable td{
+	vertical-align: middle!important;
+}
+.informTable .glyphicon:before{
+	font-size: 1.2em;
+}
+.informTable .glyphicon.active:before{
+    content: "\e006";
+    color: #D43F3A;
+}
+.inform-tit{
+	max-width: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.informBtns{
+	margin-bottom: 10px;
+}
+.informBtns button{
+	float: right;
+}
+/*写信*/
+.inboxWrapper{
+	padding: 30px;
+}
+.message_write_table th{
+	width: 150px;
+	vertical-align: middle!important;
+}
+.message_write_table tr:nth-child(2n){
+	background-color: #b1ecc2;
+}
+.message-type{
+	width: 200px;
+}
+td .sendBtn{
+	padding: 10px 30px;
+	margin-left: 150px;
+}
+.none{
+	/*padding: 0;*/
+	/*opacity: 0;*/
+	/*width: 0!important;
+	height: 0!important;
+	font-size: 0;
+	overflow: hidden;*/
+}
+/*页脚*/
+footer{
+	text-align: center;
+	height: 36px;
+	background-color: #333;
+	color: #fff;
+	line-height: 36px;
 }
