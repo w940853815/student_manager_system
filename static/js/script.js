@@ -1,16 +1,10 @@
 // script.js
 	//创建scotchApp模型
-document.write("<script src='../flask_util.js'></script>");
 var scotchApp = angular.module('scotchApp', ['ngRoute']);
 
 //路由配置
 scotchApp.config(function($routeProvider) {
 		$routeProvider
-			//个人信息
-			// .when('/myInfo',{
-			// 	templateUrl:flask_util.url_for('static',filename='pages/myinfo.html'),
-			// 	controller: 'myinfoController'
-			// })
 			.when('/myInfo',{
 				templateUrl:'static/pages/myinfo.html',
 				controller: 'myinfoController'
@@ -86,7 +80,7 @@ scotchApp.controller('mainController', function($scope,$http) {
 	
 //	myUrl='http://115.159.208.223/json.json?callback=angular.callbacks._0';
 //	myUrl='http://115.159.208.223/json.json?callback=JSON_CALLBACK';
-	myUrl='http://127.0.0.1:5000/json?callback=JSON_CALLBACK';
+	myUrl='http://127.0.0.1/json?callback=JSON_CALLBACK';
 //	myUrl='http://123.207.139.130/json?callback=angular.callbacks._0';
 //	myUrl='https://public-api.wordpress.com/rest/v1/sites/wtmpeachtest.wordpress.com/posts?callback=JSON_CALLBACK';
 

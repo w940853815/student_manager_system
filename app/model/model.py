@@ -5,7 +5,6 @@ from flask import Response,request
 from flask_sqlalchemy import SQLAlchemy
 class stu_info(db.Model):
 	'''Flask-SQLAlchemy这个框架SQLAlchemy 的操作，而SQLAlchemy 是一个很强大的关系型数据库框架
-
 	'''
 	__tablename__='stu_info'
 	stu_id = db.Column(db.Integer, primary_key=True)
@@ -70,8 +69,6 @@ class stu_info(db.Model):
 	# 	self.stu_start_date = stu_start_date
 	# 	self.stu_native = stu_native
 	# 	self.stu_record = stu_record
-
-
 	def creat_table(self):
 		db.create_all()
 		print u'stu_info表创建成功'
@@ -80,6 +77,20 @@ class stu_info(db.Model):
 		db.drop_all()
 		print u'stu_info表已删除'
 
+class Inform(db.Model):
+	__tablename__='Inform'
+	inform_id = db.Column(db.CHAR(3), primary_key=True)
+	inform_type = db.Column(db.VARCHAR(20), nullable=False)
+	inform_tit = db.Column(db.VARCHAR(200), nullable=False)
+	inform_content=db.Column(db.VARCHAR(1000), nullable=False)
+	inform_date=db.Column(db.DATE,nullable=False)
+	def creat_table(self):
+		db.create_all()
+		print u'Inform表创建成功'
+	def delete_table(self):
+		'''慎用！！！！会将表和数据一块删除'''
+		db.drop_all()
+		print u'Inform表已删除'
 def query_by_stu_id(stu_id):
 	query = stu_info.query.filter_by(stu_id=stu_id).first()
 	dict={}
@@ -112,11 +123,24 @@ def query_by_stu_id(stu_id):
 	dict['stu_native'] = query.stu_native
 	dict['stu_record'] = query.stu_record
 	return dict
+
 def StuInfo_ToJson(stu_id):
 	'''http://www.jb51.net/article/46462.htm json原理
 	http://www.jb51.net/article/74935.htm 参考资料
 	'''
 	return query_by_stu_id(stu_id)
+def query_Inform():
+	query = Inform.query.all()
+	list=[]
+	for x in range(len(query)):
+		dict = {}
+		dict['inform_id'] = query[x].inform_id
+		dict['inform_type']=query[x].inform_type
+		dict['inform_tit']=query[x].inform_tit
+		dict['inform_content']=query[x].inform_content
+		dict['inform_date']=str(query[x].inform_date)
+		list.append(dict)
+	return list
 	# for x,y in query_by_stu_id(stu_id):
 	# 	meta[x]=y
 
@@ -192,8 +216,9 @@ def StuInfo_ToJson(stu_id):
 # s=stu_info.query.filter_by(stu_id='1').first() #返回值是类类型  s.stu_id
 # s1=stu_info.query.all() #返回值是list类型 s1[0].stu_id
 # print s.stu_id,s.stu_name,s.stu_cardID,s.stu_sex,s.stu_birthday,s.stu_nation,s.stu_zzmm,s.stu_qq,s.stu_email,s.stu_yzbm,s.stu_ksh,s.stu_rxsj,s.stu_rxfs,s.stu_xxxs,s.stu_pylx,s.stu_pydx,s.stu_pycc,s.stu_bxlx,s.stu_bxxx,s.stu_img,s.stu_tel,s.stu_dept,s.stu_profession,s.stu_class,s.stu_start_date,s.stu_native,s.stu_record
-
-
+# inform=Inform()
+# inform.creat_table()
+print query_Inform()
 
 
 

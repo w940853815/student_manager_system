@@ -11,10 +11,11 @@ def login():
 	return render_template('index.html')
 @app.route('/json',methods=['GET'])
 def get_json():
-	meta={}
-	meta['meta']=StuInfo_ToJson(1)
+	data={}
+	data['meta']=StuInfo_ToJson(132055114)
+	data['informs']=query_Inform()
 	jsonp_callback = request.args.get('callback', '')  # 关键代码
-	jsonStr = json.dumps(meta)
+	jsonStr = json.dumps(data)
 	return Response("%s(%s)" % (jsonp_callback, jsonStr), mimetype='text/javascript')
 @app.route('/main.html',methods=['POST','GET'])
 def main():
@@ -25,7 +26,7 @@ if __name__ == '__main__':
 		try:
 
 			#app.run(host='0.0.0.0',port='80')
-			app.run(debug=True)
+			app.run(host='0.0.0.0',port=80,debug=True)
 
 		except socket.error,e:
 			print e
